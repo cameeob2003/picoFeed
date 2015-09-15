@@ -172,7 +172,7 @@ class Curl extends Client
             Logger::setMessage(get_called_class().' Proxy: '.$this->proxy_hostname.':'.$this->proxy_port);
 
             curl_setopt($ch, CURLOPT_PROXYPORT, $this->proxy_port);
-            curl_setopt($ch, CURLOPT_PROXYTYPE, 'HTTP');
+            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
             curl_setopt($ch, CURLOPT_PROXY, $this->proxy_hostname);
 
             if ($this->proxy_username) {
